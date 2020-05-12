@@ -1,0 +1,169 @@
+#backButton {
+    border-radius: 4px;
+    padding: 8px;
+    border: none;
+    font-size: 16px;
+    background-color: #2eacd1;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.invisible {
+    display: none;
+}
+
+/* #chart {
+        height: 360px;
+        position: relative;
+        width: 360px;      
+      }  */
+      .tooltip {                                                   
+        background: #eee;                                          
+        box-shadow: 0 0 5px #999999;                               
+        color: #333;                                               
+        display: none;                                             
+        font-size: 12px;                                           
+        left: 130px;                                               
+        padding: 10px;                                             
+        position: absolute;                                        
+        text-align: center;                                        
+        top: 95px;                                                 
+        width: 80px;                                               
+        z-index: 10;                                               
+      }             
+      
+      .tooltip-margin{
+        background: #eee;                                          
+        box-shadow: 0 0 5px #999999;                               
+        color: #333;                                               
+        display: none;                                             
+        font-size: 12px;                                           
+        left: 130px;                                               
+        padding: 10px;                                             
+        position: absolute;                                        
+        text-align: center;                                        
+        top: 95px;                                                 
+        width: 80px;                                               
+        z-index: 10; 
+    margin-top: 770px;
+      }
+      
+      .legend {
+        font-size: 12px;
+      }
+      rect {
+        stroke-width: 2;
+      }
+
+      svg{
+        overflow: initial !important;
+      }
+
+      .widget{
+        display: inline-block;
+        width: 100%;
+        margin: 10px 150px;
+        margin-bottom: 150px;
+      }
+
+      #percentages{
+        border: 1px solid gray;
+    padding: 5px;
+    line-height: 1.5;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    right: 0px;
+    width: 230px;
+
+      }
+
+       #mainchartlegend,#monthchartlegend,#month6chartlegend,#userchartlegend{
+        padding: 5px;
+    line-height: 2.5;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    width: 320px;
+          }
+          .commonlegend{
+            padding: 5px;
+    line-height: 2.5;
+    max-height: 200px;
+    overflow: auto;
+    position: absolute;
+    width: 230px;
+          }
+
+                  .square {
+                    float: left;
+                    width: 20px;
+                    height: 20px;
+                    margin: 5px;
+                    border: 1px solid rgba(0, 0, 0, .2);
+                  }
+
+                  .margin-top-40{
+                    margin-top: 40px;
+                  }
+
+  /*dropdown menu*/
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #e6eaed;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background:#e6eaed;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  select {
+    flex: 1;
+    padding: 0 2.5em;
+    color:#111010;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #e6eaed;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+
+  .year-lbl
+  {
+    font-weight: 500;
+    /* right: -2px; */
+    position: absolute;
+    left: 31px;
+    top: 20px;
+    font-size: medium;
+  }
