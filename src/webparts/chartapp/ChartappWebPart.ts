@@ -39,7 +39,7 @@ export default class ChartappWebPart extends BaseClientSideWebPart<IChartappWebP
  
   public render(): void {  
     this.domElement.innerHTML = `<div class="widget">
-    <div id='drop-sec'><label class="year-lbl">Choose a year:</label>
+    <div id='drop-sec' style="min-height: 80px;"><label class="year-lbl">Choose a year:</label>
 <div class='select'>
     <select id="year-sec">
     </select></div></div> 
@@ -698,9 +698,9 @@ export default class ChartappWebPart extends BaseClientSideWebPart<IChartappWebP
 
         if (datavalue.length == 0) {
           $('#userchart').empty();
-          $('#userchart').css('margin-top', '10px');
+          // $('#userchart').css('margin-top', '10px');
           $('#userchart').css('height', '350px');
-          $('#userchart').css('width', '350px');
+          // $('#userchart').css('width', '350px');
           $('#userchart').append('<h3>No tasks are assigned to the user</h3>');
         }
       }
