@@ -38,11 +38,11 @@ export default class ChartappWebPart extends BaseClientSideWebPart<IChartappWebP
   }
  
   public render(): void {  
-    this.domElement.innerHTML = `<div class="widget">
-    <div id='drop-sec' style="min-height: 80px;"><label class="year-lbl">Choose a year:</label>
-<div class='select'>
-    <select id="year-sec">
-    </select></div></div> 
+    this.domElement.innerHTML = `    <div id='drop-sec' style="min-height: 80px;"><label class="year-lbl">Choose a year:</label>
+    <div class='select'>
+        <select id="year-sec">
+        </select></div></div> <div class="widget">
+
      
     <div class="header">
     <h4 style="margin-left: 95px;font-size: large;">Overall Project</h4>
@@ -82,13 +82,15 @@ export default class ChartappWebPart extends BaseClientSideWebPart<IChartappWebP
     <div id="monthchartlegend" style="margin-top:-30px;"></div>
     <div id="month6chartlegend" style="margin-left: 600px;margin-top:-30px;"></div>
     </div>
-    
+    </div>
+    <div class="no-list" style="display:none;text-align:center"><h3>List Not Found</h3></div>
 
   
    `;
   
    this.loadDropDowm();
       $('select').on('change', () =>  {
+        
         listName=$('#year-sec').val();
           $('#month6chart').css('margin-top', '-304px');
         this.chartLoad();
@@ -144,7 +146,8 @@ export default class ChartappWebPart extends BaseClientSideWebPart<IChartappWebP
 
       //Fetching all data from the list
       sp.web.lists.getByTitle(listName).items.getAll().then((allItems: any[]) => {
-
+        $('.no-list').hide();
+        $('.widget').show();
         allTasks = allItems;
 
         var currentDate = new Date();
@@ -435,7 +438,29 @@ export default class ChartappWebPart extends BaseClientSideWebPart<IChartappWebP
 
 
 
-      });
+      }).catch(function(err) {
+        console.log('List not found');
+        $('.widget').hide();
+        $('.no-list').show();
+        // $('#no-list').append('<h3>List Not Found</h3>');
+        
+        // $('#chart').empty();
+        // $('#chart').css('margin-top', '10px');
+        // $('#chart').append('<h3>No tasks to view</h3>');
+        // $('#alltaskcommonlegend').hide();
+        // $('#usertaskcommonlegend').hide();
+
+        // $('#monthchart').empty();
+        // $('#monthchart').css('margin-top', '10px');
+        // $('#monthchart').append('<h3 style="margin-left: 85px;">No tasks to view</h3>');
+        // $('#month6chart').css('margin-top', '-35px');
+        // $('#month6chart').append('<h3 style="margin-left: 85px;">No tasks to view</h3>');
+        // $("#monthchartlegend").empty();
+        // $("#monthchartlegend").hide();
+        //  $("#month6chartlegend").empty();
+        //  $("#month6chartlegend").hide();
+
+        });
     });
 
 

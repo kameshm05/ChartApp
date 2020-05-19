@@ -135,6 +135,9 @@
     background:#e6eaed;
     overflow: hidden;
     border-radius: .25em;
+    left: 150px;
+    top: 8px;
+
   }
   select {
     flex: 1;
